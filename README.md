@@ -18,7 +18,9 @@ This is the intended target branch you are aiming to update (e.g., main or produ
 
 This defines the merging or rebasing action itself. It is the process that officially applies the code from the From branch into the To branch.For example, when submitting a pull request on platforms like GitHub, you are requesting to merge code from my-new-feature into main.
 
+Credit:  Google  WebContent:  Google Inc.  
 
+(trying this in another lab:   https://dev.to/michaeljota/another-git-framework-workflow-59a8)
 
 ### For the first lab.  I will create a repository in GitHub and drop files and create folder manually.  Without the use of my local Windows File Explorer.  
 
