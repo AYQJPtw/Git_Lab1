@@ -2,6 +2,24 @@
 
 ## Working from hypertext links found on Internet.
 
+#  Some information about git.  
+
+In Git, the **from** -> **to** -> **into** framework is a mental model used to visualize how code moves between different branches or environments. It clarifies the flow of changes: the origin of your code (from), the specific work being reviewed (to), and the destination branch (into).
+
+1. From (The Origin)
+
+This is the source branch where the work currently exists (e.g., your feature-branch or dev). It represents the starting point of your code changes and contains the commits you want to migrate.
+
+2. To (The Destination / Subject)
+
+This is the intended target branch you are aiming to update (e.g., main or production). It represents the "destination universe" where you want the new features or bug fixes to ultimately live.
+
+3. Into (The Action / Integration)
+
+This defines the merging or rebasing action itself. It is the process that officially applies the code from the From branch into the To branch.For example, when submitting a pull request on platforms like GitHub, you are requesting to merge code from my-new-feature into main.
+
+
+
 ### For the first lab.  I will create a repository in GitHub and drop files and create folder manually.  Without the use of my local Windows File Explorer.  
 
 #
