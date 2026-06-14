@@ -6,7 +6,7 @@
 
 
   
-**1.  I will make the second new GitHub repository for step 1 called repo2.**
+**1.  I will make the only, new GitHub repository for step 1 called repo2.**
 
 **2. With repo2 repository I will put new files and folder with some textual content.  As our example when transfered.**
   
