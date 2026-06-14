@@ -57,7 +57,8 @@ A conflict occurs if both <current> and <other> have changes in a common segment
 
 <<<<<<< A
 lines in file A
-=======
+
+
 lines in file B
 >>>>>>> B
 If there are conflicts, the user should edit the result and delete one of the alternatives.
