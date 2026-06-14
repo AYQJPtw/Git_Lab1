@@ -55,12 +55,12 @@ Given three files <current>, <base> and <other>, git merge-file incorporates all
 A conflict occurs if both <current> and <other> have changes in a common segment of lines. If a conflict is found, git merge-file normally outputs a warning and brackets the conflict with lines containing <<<<<<< and >>>>>>> markers. A typical conflict will look like this:
 
 
-<<<<<<< A
+with these <<<<<<< A
 lines in file A
 
 
 lines in file B
->>>>>>> B
+with these >>>>>>> B
 If there are conflicts, the user should edit the result and delete one of the alternatives.
 
 
