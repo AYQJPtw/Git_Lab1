@@ -5,7 +5,7 @@
 ### For the first lab.  I will create a repository in GitHub and drop files and create folder manually.  Without the use of my local Windows File Explorer.  
 
 #
-# Lab 1.  Cloning your GitHub repository on to your local pc directory new folder.
+# Lab 1.  Cloning your GitHub repository on to your local pc directory new folder.  Using git bash.
   
 **1.  I will make the only, new GitHub repository for step 1 called repo2.**
 
