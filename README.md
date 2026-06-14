@@ -33,9 +33,15 @@ Credit: I used this link to do just that.  https://git-scm.com/book/en/v2/Git-Ba
 using this code snippet: git push <remote> <branch>.  But I will use git push repo2 main.  
 
 Credit: I used this link to do just that.  https://git-scm.com/docs/git-push
-  
-**7. Using git I will push the clone of repo2 out of my local File Explorer on my PC at home.**  
-   **Into repo1 repository as a copy from the clone of repo2.**
+
+
+I was able to get the repository on GitHub down into my local computer directory.  Use GitHub Desktop to push edited files and folder up to GitHub.  
+#
+#
+# Git is only for creating a repository in your local computer directory!!!
+#
+#
+#
 
 
  
