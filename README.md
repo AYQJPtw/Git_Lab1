@@ -4,7 +4,8 @@
 
 ### For the first lab.  I will create a repository in GitHub and drop files and create folder manually.  Without the use of my local Windows File Explorer.  
 
-
+#
+# Lab 1.  Cloning your GitHub repository on to your local pc directory new folder.
   
 **1.  I will make the only, new GitHub repository for step 1 called repo2.**
 
@@ -15,7 +16,7 @@
   Here is the snippet I used for the git clone command: **git clone https://(username):(token)@gitlab.example.com/tanuki/awesome_project.git**
 
   You will need to generate a new token from your GitHub repository.  You can find it in the <developers_settings>.
-  Under your profile icon or your picture profile in the top right corner of your repository, click on Settings> developers_settings > Personal     access tokens > Fine grained tokens > And use the generate button.  Copy token paste it to some file.  As a copy.  Then Put it in the <token>     space as above.  Remove these <> brakets from from the above example git clone https:// command.  You will need the @ sign, followed by the       Github username account found in your browers after accessing your repository on GitHub.
+  Under your profile icon or your picture profile in the top right corner of your repository, click on Settings> developers_settings > Personal     access tokens > Fine grained tokens > And use the generate button.  Copy token paste it to some file.  As a copy.  Then put it in the (token)     space as above.  Remove these () brakets from around token from the above snippet, git clone https:// command.  You will need the @ sign, followed by the Github username account found in your browers after accessing your repository on GitHub.
 
   
   
