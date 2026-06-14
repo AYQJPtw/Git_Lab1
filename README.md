@@ -38,7 +38,30 @@ I was able to get the repository on GitHub down into my local computer directory
 # Git is only for creating a repository in your local computer directory!!!
 #
 #
-#
+# Lab 2.  Using Git file merge command.  
+## git-merge-file - Run a three-way file merge
+
+Credit: I will be using this link:  https://git-scm.com/docs/git-merge-file
+
+
+**SYNOPSIS**
+git merge-file [-L <current-name> [-L <base-name> [-L <other-name>]]]
+	[--ours|--theirs|--union] [-p|--stdout] [-q|--quiet] [--marker-size=<n>]
+	[--[no-]diff3] [--object-id] <current> <base> <other>
+  
+**DESCRIPTION**
+Given three files <current>, <base> and <other>, git merge-file incorporates all changes that lead from <base> to <other> into <current>. The result ordinarily goes into <current>. git merge-file is useful for combining separate changes to an original. Suppose <base> is the original, and both <current> and <other> are modifications of <base>, then git merge-file combines both changes.
+
+A conflict occurs if both <current> and <other> have changes in a common segment of lines. If a conflict is found, git merge-file normally outputs a warning and brackets the conflict with lines containing <<<<<<< and >>>>>>> markers. A typical conflict will look like this:
+
+
+<<<<<<< A
+lines in file A
+=======
+lines in file B
+>>>>>>> B
+If there are conflicts, the user should edit the result and delete one of the alternatives.
+
 
 
  
