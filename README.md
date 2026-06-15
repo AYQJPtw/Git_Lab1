@@ -144,7 +144,7 @@ meta: e.g., a configuration in a bare repository, user rights; the refs/meta/con
 tags: see above.  Credit: Linus Torvalds creator of git.  Websource https://en.wikipedia.org/wiki/Git
 
 
-### For the first lab.  I will create a repository in GitHub and drop files and create folder manually.  Without the use of my local Windows File Explorer.  
+### For the first lab.  I will create a repository in GitHub and drop files and create folder manually.  
 
 #
 # Lab 1.  Cloning your GitHub repository on to your local pc directory new folder.  Using git bash.
