@@ -149,7 +149,7 @@ tags: see above.  Credit: Linus Torvalds creator of git.  Websource https://en.w
 
 # Git internals - Plumbing and Porcelain
 
->The content-addressable filesystem layer is amazingly cool, so we’ll cover that first in this chapter; then, you’ll learn about the transport >mechanisms and the repository maintenance tasks that you may eventually have to deal with.
+>The content-addressable filesystem layer is amazingly cool, so we’ll cover that first in this chapter; then, you’ll learn about the transport mechanisms and the repository maintenance tasks that you may eventually have to deal with.
 
 **Plumbing and Porcelain**
 
