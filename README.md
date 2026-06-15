@@ -158,7 +158,7 @@ This book covers primarily how to use Git with 30 or so subcommands such as chec
 As you will have noticed by now, this book’s first nine chapters deal almost exclusively with porcelain commands. But in this chapter, you’ll be dealing mostly with the lower-level plumbing commands, because they give you access to the inner workings of Git, and help demonstrate how and why Git does what it does. Many of these commands aren’t meant to be used manually on the command line, but rather to be used as building blocks for new tools and custom scripts.
 
 When you run git init in a new or existing directory, Git creates the .git directory, which is where almost everything that Git stores and manipulates is located. If you want to back up or clone your repository, copying this single directory elsewhere gives you nearly everything you need. This entire chapter basically deals with what you can see in this directory. Here’s what a newly-initialized .git directory typically looks like:
-
+````
 $ ls -F1
 config
 description
@@ -167,6 +167,7 @@ hooks/
 info/
 objects/
 refs/
+````
 
 Depending on your version of Git, you may see some additional content there, but this is a fresh git init repository — it’s what you see by default. The description file is used only by the GitWeb program, so don’t worry about it. The config file contains your project-specific configuration options, and the info directory keeps a global exclude file for ignored patterns that you don’t want to track in a .gitignore file. The hooks directory contains your client- or server-side hook scripts, which are discussed in detail in Git Hooks.
 
