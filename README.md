@@ -25,40 +25,45 @@ Credit:  Google  WebContent:  Google Inc.
 
 # Git Design
 
-Strong support for non-linear development
+**Strong support for non-linear development**
 
 Git supports rapid branching and merging, and includes specific tools for visualizing and navigating a non-linear development history. In Git, a core assumption is that a change will be merged more often than it is written, as it is passed around to various reviewers. In Git, branches are very lightweight: a branch is only a reference to one commit.  Credit: Linus Torvalds creator of git.  Websource https://en.wikipedia.org/wiki/Git
 
 
-Distributed development
+**Distributed development**
 
 Git gives each developer a local copy of the full development history, and changes are copied from one such repository to another. These changes are imported as added development branches and can be merged in the same way as a locally developed branch.
 
-Compatibility with existing systems and protocols
+**Compatibility with existing systems and protocols**
 
 Repositories can be published via Hypertext Transfer Protocol Secure (HTTPS), Hypertext Transfer Protocol (HTTP), File Transfer Protocol (FTP), or a Git protocol over either a plain socket or Secure Shell (ssh). Git also has a CVS server emulation, which enables the use of existing CVS clients and IDE plugins to access Git repositories. Subversion repositories can be used directly with git-svn.
 Efficient handling of large projects
 
 Torvalds has described Git as being very fast and scalable, and performance tests done by Mozilla showed that it was an order of magnitude faster diffing large repositories than Mercurial and GNU Bazaar; fetching version history from a locally stored repository can be one hundred times faster than fetching it from the remote server.
 
-Cryptographic authentication of history
+**Cryptographic authentication of history**
 
 The Git history is stored in such a way that the ID of a particular version (a commit in Git terms) depends upon the complete development history leading up to that commit. Once it is published, it is not possible to change the old versions without it being noticed. The structure is similar to a Merkle tree, but with added data at the nodes and leaves. (Mercurial and Monotone also have this property.)
 
-Toolkit-based design
+**Toolkit-based design**
 
 Git was designed as a set of programs written in C and several shell scripts that provide wrappers around those programs. Although most of those scripts have since been rewritten in C for speed and portability, the design remains, and it is easy to chain the components together.
-Pluggable merge strategies
+
+**Pluggable merge strategies**
+
 As part of its toolkit design, Git has a well-defined model of an incomplete merge, and it has multiple algorithms for completing it, culminating in telling the user that it is unable to complete the merge automatically and that manual editing is needed.
-Garbage accumulates until collected
+
+**Garbage accumulates until collected**
+
 Aborting operations or backing out changes will leave useless dangling objects in the database. These are generally a small fraction of the continuously growing history of wanted objects. Git will automatically perform garbage collection when enough loose objects have been created in the repository. Garbage collection can be called explicitly using git gc.
 
-Periodic explicit object packing
+**Periodic explicit object packing**
+
 Git stores each newly created object as a separate file. Although individually compressed, this takes up a great deal of space and is inefficient. This is solved by the use of packs that store a large number of objects delta-compressed among themselves in one file (or network byte stream) called a packfile. Packs are compressed using the heuristic that files with the same name are probably similar, without depending on this for correctness. A corresponding index file is created for each packfile, recording the offset of each object in the packfile. Newly created objects (with newly added history) are still stored as single objects, and periodic repacking is needed to maintain space efficiency. The process of packing the repository can be very computationally costly. By allowing objects to exist in the repository in a loose but quickly generated format, Git allows the costly pack operation to be deferred until later, when time matters less, e.g., the end of a workday. Git does periodic repacking automatically, but manual repacking is also possible with the git gc command.  For data integrity, both the packfile and its index have an SHA-1 checksum inside, and the file name of the packfile also contains an SHA-1 checksum. To check the integrity of a repository, run the git fsck command.
 
 Another property of Git is that it snapshots directory trees of files. The earliest systems for tracking versions of source code, Source Code Control System (SCCS) and Revision Control System (RCS), worked on individual files and emphasized the space savings to be gained from interleaved deltas (SCCS) or delta encoding (RCS) the (mostly similar) versions. Later revision-control systems maintained this notion of a file having an identity across multiple revisions of a project. However, Torvalds rejected this concept. Consequently, Git does not explicitly record file revision relationships at any level below the source-code tree.
 
-Downsides
+**Downsides**
 
 These implicit revision relationships have some significant consequences:
 
@@ -66,7 +71,7 @@ It is slightly more costly to examine the change history of one file than the wh
 
 Renames are handled implicitly rather than explicitly. A common complaint with CVS is that it uses the name of a file to identify its revision history, so moving or renaming a file is not possible without either interrupting its history or renaming the history and thereby making the history inaccurate. Most post-CVS revision-control systems solve this by giving a file a unique long-lived name (analogous to an inode number) that survives renaming. Git does not record such an identifier, and this is claimed as an advantage. Source code files are sometimes split or merged, or simply renamed, and recording this as a simple rename would freeze an inaccurate description of what happened in the (immutable) history. Git addresses the issue by detecting renames while browsing the history of snapshots rather than recording it when making the snapshot. (Briefly, given a file in revision N, a file of the same name in revision N − 1 is its default ancestor. However, when there is no like-named file in revision N − 1, Git searches for a file that existed only in revision N − 1 and is very similar to the new file.) However, it does require more CPU-intensive work every time the history is reviewed, and several options to adjust the heuristics are available. This mechanism does not always work; sometimes a file that is renamed with changes in the same commit is read as a deletion of the old file and the creation of a new file. Developers can work around this limitation by committing the rename and the changes separately.
 
-Merging strategies
+**Merging strategies**
 
 Git implements several merging strategies; a non-default strategy can be selected at merge time.
 
@@ -79,7 +84,7 @@ When there are more than one common ancestors that can be used for a three-way m
 — Linus Torvald says,
 octopus: This is the default when merging more than two heads.
 
-Data structures
+**Data structures**
 
 Git's primitives are not inherently a source-code management system.
 
@@ -89,9 +94,9 @@ From this initial design approach, Git has developed the full set of features ex
 
 Git has two data structures: a mutable index (also called stage or cache) that caches information about the working directory and the next revision to be committed; and an object database that stores immutable objects.
 
-The index serves as a connection point between the object database and the working tree.
+**The index serves as a connection point between the object database and the working tree.**
 
-The object store contains five types of objects.
+**The object store contains five types of objects.**
 
 A blob is the content of a file. Blobs have no proper file name, time stamps, or other metadata (a blob's name internally is a hash of its content). In Git, each blob is a version of a file, in which is the file's data.
 
@@ -113,7 +118,9 @@ Heads (branches): Named references that are advanced automatically to the new co
 HEAD: A reserved head that will be compared against the working tree to create a commit.
 
 Tags: Like branch references, but fixed to a particular commit. Used to label important points in history.
-Commands
+
+
+**Commands**
 
 Frequently used commands for Git's command-line interface include.
 
@@ -126,7 +133,7 @@ git add [file], which adds a file to git's working directory (files about to be 
 git commit -m [commit message], which commits the files from the current working directory (so they are now part of the repository's history).
 A .gitignore file may be created in a Git repository as a plain text file. The files listed in the .gitignore file will not be tracked by Git.  This feature can be used to ignore files with keys or passwords, various extraneous files, and large files (which GitHub will refuse to upload).
 
-Git references
+**Git references**
 
 Every object in the Git database that is not referred to may be cleaned up by using a garbage collection command or automatically. An object may be referenced by another object or an explicit reference. Git has different types of references. The commands to create, move, and delete references vary. git show-ref lists all references. Some types are:
 
