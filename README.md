@@ -278,7 +278,7 @@ If you’re using ZSH, the ^ character is used for globbing, so you have to encl
 Conceptually, the data that Git is storing looks something like this:
 
 
-
+![master_tree]()
 
 <<<<PICTURE>>>>>>>>>>
 
