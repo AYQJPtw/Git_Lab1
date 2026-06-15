@@ -169,6 +169,8 @@ Credit: I used this link to do just that.  https://git-scm.com/docs/git-push
 
 I was able to get the repository on GitHub down into my local computer directory.  Use GitHub Desktop to push edited files and folder up to GitHub.  
 #
+**I found this link is great for after completing step 4. and recommend it when working in the local directory of your pc**  https://medium.com/@nikitakharate89/git-version-control-understanding-areas-file-flow-and-undoing-changes-7529f4ff86cc
+Credit: Nikitakharate.  Websource: https://medium.com  
 #
 # Git is only for creating a repository in your local computer directory!!!
 #
